@@ -203,55 +203,76 @@
      </style>
  </head>
  <body>
-     <div class="container">
-         <h1 class="text-center mb-4">Nuestro Equipo</h1>
-         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-             <div class="carousel-inner">
-                 <div class="carousel-item active">
-                     <div class="row justify-content-center">
-                         <div class="col-md-4">
-                             <div class="miembro text-center">
-                                 <img src="images/11.png" alt="Nombre del Miembro" class="img-fluid">
-                                 <h3>Wendy Reyes</h3>
-                             </div>
-                         </div>
-                         <div class="col-md-4">
-                             <div class="miembro text-center">
-                                 <img src="images/13.png" alt="Nombre del Miembro" class="img-fluid">
-                                 <h3>Valeria Lee</h3>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="carousel-item">
-                     <div class="row justify-content-center">
-                         <div class="col-md-4">
-                             <div class="miembro text-center">
-                                 <img src="images/12.png" alt="Nombre del Miembro" class="img-fluid">
-                                 <h3>Avril Flores</h3>
-                             </div>
-                         </div>
-                         <div class="col-md-4">
-                             <div class="miembro text-center">
-                                 <img src="images/14.png" alt="Nombre del Miembro" class="img-fluid">
-                                 <h3>Edgar Cornejo</h3>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-                 <!-- Agrega más .carousel-item si tienes más miembros -->
-             </div>
-             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                 <span class="sr-only">Anterior</span>
-             </a>
-             <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                 <span class="sr-only">Siguiente</span>
-             </a>
-         </div>
-     </div>
- 
+    <div class="container">
+        <h1 class="text-center mb-4">Nuestro Equipo</h1>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4">
+                            <div class="miembro text-center">
+                                <img src="images/11.png" alt="Wendy Reyes" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="openModal('/mnt/data/11.png', 'Wendy Reyes')">
+                                <h3>Wendy Reyes</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="miembro text-center">
+                                <img src="images/13.png" alt="Valeria Lee" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="openModal('/mnt/data/13.png', 'Valeria Lee')">
+                                <h3>Valeria Lee</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4">
+                            <div class="miembro text-center">
+                                <img src="images/12.png" alt="Avril Flores" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="openModal('/mnt/data/12.png', 'Avril Flores')">
+                                <h3>Avril Flores</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="miembro text-center">
+                                <img src="images/14.png" alt="Edgar Cornejo" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="openModal('/mnt/data/14.png', 'Edgar Cornejo')">
+                                <h3>Edgar Cornejo</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Agrega más .carousel-item si tienes más miembros -->
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(imageSrc, imageAlt) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModalLabel').innerText = imageAlt;
+        }
+    </script>
      
 
             
